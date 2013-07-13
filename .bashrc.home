@@ -1,0 +1,30 @@
+alias brw="vi ~/.bashrc.work; source ~/.bash_profile"
+alias brh="vi ~/.bashrc.home; source ~/.bash_profile"
+alias h="history"
+alias c="clear"
+alias railsc="RAILS_ENV=integration bundle exec rails c"
+
+alias sup="git submodule update"
+alias gpod="git push origin develop"
+alias gpom="git push origin master"
+alias gp="git pull --rebase"
+alias gc="git checkout"
+alias gm="git commit -m"
+alias gb="git branch"
+alias gd="git checkout develop"
+alias gm="git checkout master"
+alias gl="git log --oneline"
+alias ga="git commit --amend"
+
+export LESS="-erX"
+
+export RBENV_ROOT="${HOME}/.rbenv"
+
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
+
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
