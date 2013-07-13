@@ -1,9 +1,19 @@
+# aliases
+
+## env specific
 alias brw="vi ~/.bashrc.work; source ~/.bash_profile"
 alias brh="vi ~/.bashrc.home; source ~/.bash_profile"
+
+## handy general shortcuts
 alias h="history"
 alias c="clear"
 alias railsc="RAILS_ENV=integration bundle exec rails c"
 
+## handy bin shortcuts
+alias gitx="/Applications/GitX.app/Contents/MacOS/GitX"
+alias md="Markdown.pl"
+
+## handy git shortcuts
 alias sup="git submodule update"
 alias gpod="git push origin develop"
 alias gpom="git push origin master"
@@ -16,15 +26,36 @@ alias gm="git checkout master"
 alias gl="git log --oneline"
 alias ga="git commit --amend"
 
+# configs
+
+## path (do I really need all of these?)
+
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/local/git/bin
+export PATH=$PATH:/usr/X11/bin
+export PATH=$PATH:/Users/abull/dev/webspecter/bin
+export PATH=$PATH:/Applications
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/local/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+## app-specific
+
 export LESS="-erX"
+export JAVA_OPTS="-Xmx768M -XX:MaxPermSize=192m"
+export EDITOR='vim -f'
+
+## rbenv
 
 export RBENV_ROOT="${HOME}/.rbenv"
-
 if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
   eval "$(rbenv init -)"
 fi
-
-export PATH=/usr/local/share/npm/bin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
